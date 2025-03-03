@@ -88,7 +88,15 @@ class Lieferkosten {
 
 void main() {
   var bestellung1 = Lieferkosten(18.5, 4.2, false, false, 2);
+  var bestellung2 = Lieferkosten(55.90, 8.8, true, true, 6);
+  var bestellung3 = Lieferkosten(12.40, 11.2, false, false, 1);
   bestellung1.calculateDeliveryCost();
   print("Lieferkosten: ${bestellung1.deliveryCost}");
   print("Lieferkategorie: ${bestellung1.deliveryCategory()}");
+  bestellung2.calculateDeliveryCost();
+  print("Lieferkosten: ${bestellung2.deliveryCost}");
+  print("Lieferkategorie: ${bestellung2.deliveryCategory()}");
+  bestellung3.calculateDeliveryCost();
+  print("Lieferkosten: ${bestellung3.deliveryCost}");
+  print("Lieferkategorie: ${bestellung3.deliveryCategory()}");
 }

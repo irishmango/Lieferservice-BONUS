@@ -22,7 +22,7 @@ double calculateDeliveryCost(double orderValue, double distance, bool rushHour, 
   }
 
   if (distance > 5) {
-    int extraDistance = ((distance - 5).ceil()); // Round up to nearest full km
+    int extraDistance = ((distance - 5).ceil()); 
     deliveryCost += extraDistance * 0.30;
   }
 
@@ -52,14 +52,15 @@ double calculateDeliveryCost(double orderValue, double distance, bool rushHour, 
   }
 
   deliveryCost = ((deliveryCost * 10).ceil()) / 10;
-
   return deliveryCost;
 }
 
 String deliveryCategory(double deliveryCost) {
-  return (deliveryCost < 5.00)
-      ? "Günstige Lieferung"
-      : (deliveryCost <= 10.00)
-          ? "Standardlieferung"
-          : "Premium-Lieferung";
+  if (deliveryCost < 5.00) {
+    return "Günstige Lieferung";
+  } else if (deliveryCost <= 10.00) {
+    return "Standardlieferung";
+  } else {
+    return "Premium-Lieferung";
+  }
 }
